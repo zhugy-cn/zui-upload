@@ -1,0 +1,42 @@
+.zui-upload-btn {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  border-radius: 2px;
+  border: 1px solid #e5e5e5;
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+
+.zui-upload-btn-def {
+  position: relative;
+  height: 100%;
+}
+
+.zui-upload-btn-def::after,
+.zui-upload-btn-def::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 2px;
+  transform: translate(-50%, -50%);
+  background-color: #666;
+}
+
+.zui-upload-btn-def::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.zui-upload-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  font-size: 0;
+  opacity: 0;
+}
