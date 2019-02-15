@@ -3,10 +3,13 @@
 > A Vue.js project
 
 ### Options
-|    属性    |    描述   |   类型   |	default	|
+|    配置    |    属性    |    描述   |   类型   |	default	|
 | -----------------   | ---------------- | :--------: | :----------: |
-| uploadOptions       | the value you want to begin at  |Number | 0     |
-| qiniuOps            | the value you want to arrive at |Number | 2017  |
+| uploadOptions   |    | the value you want to begin at  |Number | 0     |
+|    |  width  | the value you want to begin at  |Number | 0     |
+|    |  height  | the value you want to begin at  |Number | 0     |
+
+| qiniuOps        |    | the value you want to arrive at |Number | 2017  |
 
 ## Build Setup
 
