@@ -5,6 +5,7 @@
 分为七牛云上传跟图片压缩两种，解决了手机端拍照上传图片旋转等问题。  
 第一种使用方式：七牛云上传，七牛云上传时需要配置 qiniuOptions 配置项，直接上传七牛云，上传完毕返回上传图片的信息  
 第二种使用方式：图片压缩，只有压缩图片的功能，压缩成功后返回图片文件信息，根据返回的文件信息自己上传服务端  
+** tips: 支持slot使用自定义样式 **
 
 ### 安装
 ```bash
@@ -41,7 +42,10 @@ components:{
       @error="error"
     ></zui-upload>
     <!-- 不上传，只压缩图片 -->
-    <zui-upload :img-options="imgOptions" @complete="complete"></zui-upload>
+    <zui-upload :img-options="imgOptions" @complete="complete">
+      <!-- 使用 slot 自定义内容 -->
+      <p>我是自定义的内容</p>
+    </zui-upload>
     <img id="previewImg" src alt>
   </div>
 </template>
