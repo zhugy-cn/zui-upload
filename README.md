@@ -9,6 +9,8 @@
 ### How to use?
 ```bash
 npm install zui-upload -S
+import ZuiUpload from "zui-upload";
+Vue.use(ZuiUpload);
 ```
 
 
