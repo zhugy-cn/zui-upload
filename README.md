@@ -5,9 +5,11 @@
 ### Options
 |    属性    |    描述   |   类型   |	default	|
 | -----------------   | ---------------- | :--------: | :----------: |
-| uploadOptions     | the value you want to begin at  |Number | 0     |
-|   |  width  | the value you want to begin at  |Number | 0     |
-|    |  height  | the value you want to begin at  |Number | 0     |
+| uploadOptions     | 图片的配置  |  |    |
+|   |  width  | 图片宽度  |Number | ..     |
+|    |  height  | 图片高度  |Number | ..     |
+|    |  quality  | 图片的质量  |Number | 0.9     |
+
 
 
 
