@@ -7,18 +7,70 @@
 第二种使用方式：图片压缩，只有压缩图片的功能，压缩成功后返回图片文件信息，根据返回的文件信息自己上传服务端  
 
 
+### Example
+
+```vue
+<template>
+  <div>
+    <!-- 使用七牛云压缩图片并上传 -->
+    <zui-upload
+      :qiniu-options="qiniuOptions"
+      :img-options="imgOptions"
+      @next="next"
+      @complete="complete"
+      @error="error"
+    ></zui-upload>
+    <!-- 不上传，只压缩图片 -->
+    <zui-upload :img-options="imgOptions" @complete="complete"></zui-upload>
+    <img id="previewImg" src alt>
+  </div>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      imgOptions: {
+        width: 600,
+        height: 600,
+        quality: 0.8
+      },
+      qiniuOptions: {
+        token: "你的七牛云token",
+        baseUrl: "你的七牛云路径"
+      }
+    };
+  },
+  methods: {
+    next(res) {
+      console.log(res);
+      console.log("七牛云上传时：进度");
+    },
+    error(err) {
+      console.log(err);
+      console.log("七牛云上传错误时：错误信息");
+    },
+    complete(res) {
+      console.log(res);
+      console.log("上传完成");
+      document.getElementById("previewImg").src = res.url;
+    }
+  }
+};
+</script>
+```
+
 
 
 ### Options
-|    配置项    |    属性    |    描述   |   类型   |	默认值	| 示例 |
-| -----------------   | -----------------   | ---------------- | :--------: | :----------: |:----------: |
+|    配置项    |    属性    |    描述   |   类型   |	默认值	|
+| -----------------   | -----------------   | ---------------- | :--------: | :----------: |
 | imgOptions     |   | 图片的配置 |    |
-|   |  width  | 宽度  |Number | -     | 200  |
-|    |  height  | 高度  |Number | -     | 200  |
-|    |  quality  | 质量  |Number | 0.9     | 0.85 |
+|   |  width  | 宽度  |Number | -     |
+|    |  height  | 高度  |Number | -     |
+|    |  quality  | 质量  |Number | 0.9     |
 | qiniuOptions     |   | 七牛云配置(不使用七牛云上传无需配置) |    |
-||  token  | 七牛云token  |String | -     | zXPk0Bi0lXgMw4xc9h_VT... |
-||  baseUrl  | 七牛云路径  |String | -     | http://yourpath.com/ |
+||  token  | 七牛云token  |String | -     |
+||  baseUrl  | 七牛云路径  |String | -     |
 
 
 
