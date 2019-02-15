@@ -9,10 +9,9 @@
 |   |  width  | 宽度  |Number | ..     |
 |    |  height  | 高度  |Number | ..     |
 |    |  quality  | 质量  |Number | 0.9     |
-|    |    |   | |     |
 | qiniuOptions     |   | 七牛云配置(不使用七牛云上传无需配置) |    |
-|   |  token  | 七牛云token  |String | ..     |
-|    |  baseUrl  | 七牛云路径  |String | ..     |
+   |  token  | 七牛云token  |String | ..     |
+    |  baseUrl  | 七牛云路径  |String | ..     |
 
 
 
