@@ -36,6 +36,7 @@ export default {
       },
       qiniuOptions: {
         token: "你的七牛云token",
+        // 七牛云路劲以 / 结尾，错误：http://yourpath.cn   正确：http://yourpath.cn/
         baseUrl: "你的七牛云路径"
       }
     };
