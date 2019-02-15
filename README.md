@@ -6,11 +6,24 @@
 第一种使用方式：七牛云上传，七牛云上传时需要配置 qiniuOptions 配置项，直接上传七牛云，上传完毕返回上传图片的信息  
 第二种使用方式：图片压缩，只有压缩图片的功能，压缩成功后返回图片文件信息，根据返回的文件信息自己上传服务端  
 
-### How to use?
+### 安装
 ```bash
 npm install zui-upload -S
+
+```
+
+### 全局使用
+```bash
 import ZuiUpload from "zui-upload";
 Vue.use(ZuiUpload);
+```
+
+### 组件内使用
+```bash
+import ZuiUpload from "zui-upload";
+components:{
+  ZuiUpload
+}
 ```
 
 
