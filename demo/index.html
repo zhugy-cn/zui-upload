@@ -18,10 +18,11 @@
 <body>
   <div id="app">
     <!-- 使用七牛云压缩图片并上传,script 引入标签必须闭合 -->
-    <zui-upload key="1" :qiniu-ops="qiniuOps" :options="uploadOptions" @next="next" @complete="complete" @error="error">
+    <zui-upload :qiniu-options="qiniuOptions" :img-options="imgOptions" @next="next" @complete="complete"
+      @error="error">
     </zui-upload>
     <!-- 不上传，只压缩图片 -->
-    <zui-upload key="2" :options="uploadOptions" @complete="complete"></zui-upload>
+    <zui-upload :img-options="imgOptions" @complete="complete"></zui-upload>
     <img id="previewImg" src alt>
   </div>
 
@@ -29,14 +30,14 @@
     new Vue({
       el: '#app',
       data: {
-        uploadOptions: {
+        imgOptions: {
           width: 600,
           height: 600,
           quality: 0.8
         },
-        qiniuOps: {
+        qiniuOptions: {
           token:
-            "zXPk0Bi0lXgMw4xc9h_VTmwd1VFiqcKSI8J1nFUq:bA4ELotKm0PhKkJzYeYNwmK0Szg=:eyJzY29wZSI6Inpzay1pbWciLCJkZWFkbGluZSI6MTU1MDEyODEyM30=",
+            "zXPk0Bi0lXgMw4xc9h_VTmwd1VFiqcKSI8J1nFUq:JWA0ZquQjFWuOYgNxD_duF-H3Qk=:eyJzY29wZSI6Inpzay1pbWciLCJkZWFkbGluZSI6MTU1MDE5NzE3NX0=",
           baseUrl: "http://resourse.zskwl.cn/"
         }
       },

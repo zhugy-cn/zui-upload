@@ -13,10 +13,10 @@ import { dataURLtoFile, guid } from "./utils.js";
 export default {
   name: "zui-upload",
   props: {
-    qiniuOps: {
+    qiniuOptions: {
       type: Object
     },
-    options: {
+    imgOptions: {
       type: Object,
       default: {
         quality: 0.9
@@ -66,7 +66,7 @@ export default {
       let originWidth = img.width;
       let originHeight = img.height;
       // 传入的参数
-      let { width, height, quality } = this.options;
+      let { width, height, quality } = this.imgOptions;
 
       // 图片最大尺寸，可通过国设置宽高来实现图片压缩程度
       let maxWidth = width || originWidth;
@@ -127,7 +127,7 @@ export default {
       let { key, type } = this.fileInfo;
       let base64 = canvas.toDataURL(type, quality); //压缩后的 base64 格式
       let fileObj = dataURLtoFile(base64, key);
-      if (this.qiniuOps && this.qiniuOps.token) {
+      if (this.qiniuOptions && this.qiniuOptions.token) {
         this._uploadQiniu(fileObj);
       } else {
         this.$emit("complete", {
@@ -140,7 +140,7 @@ export default {
     // 上传七牛云
     _uploadQiniu(file) {
       const { key } = this.fileInfo;
-      const { token, baseUrl } = this.qiniuOps;
+      const { token, baseUrl } = this.qiniuOptions;
       const config = {
         useCdnDomain: true
       };
