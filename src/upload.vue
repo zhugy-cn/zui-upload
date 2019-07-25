@@ -3,13 +3,13 @@
     <slot>
       <div class="zui-upload-btn-def"></div>
     </slot>
-    <input type="file" @change="inputChange()" accept="image/*" class="zui-upload-input">
+    <input type="file" @change="inputChange()" accept="image/*" class="zui-upload-input" />
   </div>
 </template>
 <script>
 import EXIF from "exif-js";
 import * as qiniu from "qiniu-js";
-import { dataURLtoFile, guid } from "./utils.js";
+import { dataURLtoFile, guid, dataURItoBlob } from "./utils.js";
 export default {
   name: "zui-upload",
   props: {
@@ -126,7 +126,7 @@ export default {
       }
       let { key, type } = this.fileInfo;
       let base64 = canvas.toDataURL(type, quality); //压缩后的 base64 格式
-      let fileObj = dataURLtoFile(base64, key);
+      let fileObj = dataURItoBlob(base64);
       if (this.qiniuOptions && this.qiniuOptions.token) {
         this._uploadQiniu(fileObj);
       } else {
